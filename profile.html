@@ -1,0 +1,62 @@
+<!-- Professional Vision Guard Profile Page -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vision Guard - Profile</title>
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo-text">Vision Guard</div>
+        <nav class="main-nav">
+            <a href="vision.html">Home</a>
+            <a href="visionsignup.html">Sign Up</a>
+            <a href="visionlogin.html">Login</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="profile.html" class="active">Profile</a>
+            <a href="reports.html">Reports</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Vision Guard</h1>
+        <section id="profile">
+            <h2>Edit Profile</h2>
+            <form>
+                <div class="profile-pic-container">
+                    <div class="profile-pic">
+                        <img id="profileImage" src="default-profile.jpg" alt="Profile Picture">
+                        <input type="file" id="fileInput" accept="image/*">
+                        <label for="fileInput" class="upload-btn">Change Photo</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" value="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" value="johndoe" required>
+                </div>
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <input type="number" id="age" name="age" value="30" min="1" max="120" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" value="john.doe@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" value="+1 (555) 123-4567" required>
+                </div>
+                <button type="submit" class="update-btn">Update Profile</button>
+            </form>
+        </section>
+    </main>
+    <footer class="main-footer">
+        <p>&copy; 2025 Vision Guard. All rights reserved.</p>
+    </footer>
+</body>
+</html>

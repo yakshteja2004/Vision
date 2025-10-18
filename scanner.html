@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vision Guard - scanner</title>
+    <link rel="stylesheet" href="scanner.css">
+</head>
+<body>
+    <!-- Hamburger menu using checkbox -->
+<input type="checkbox" id="menuToggle" />
+<label for="menuToggle" class="hamburger">&#9776;</label>
+
+<!-- Navigation menu -->
+<nav class="navMenu">
+    <a href="HOME.html">Home</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="profile.html">Profile</a>
+    <a href="reports.html">Reports</a>
+    <a href="settings.html">Settings</a>
+    <a href="Help & support.html">Help&support</a>
+    <a href="aboutus.html">About Us</a>
+    <a href="Feedback.html">Feedback</a>
+    <b href="logoout.html">Logout</b>
+</nav>
+    <div class="bg-animation"></div>
+    <div class="hero">
+        <div class="scanner"></div>
+    <div class="ai-bolt" onclick="alert('AI Bolt: Ask your doubts here! (Static demo)')">🤖</div>
+    </div>
+    
+    <div>
+    <div class="scanner-container">
+    <div class="corner top-left"></div>
+    <div class="corner top-right"></div>
+    <div class="corner bottom-left"></div>
+    <div class="corner bottom-right"></div>
+    <div class="laser"></div>
+    <div class="scanner-text">Place QR / Dataset inside frame</div>
+</div>
+
+<!-- right: Upload Dataset Box -->
+<div class="upload-box">
+    <h2>📁 Upload Dataset</h2>
+    <label class="custom-upload" for="file-upload">Choose File</label>
+    <input type="file" id="file-upload" accept=".jpg,.png,.csv,.jpeg,.txt">
+    <p>Supported formats: JPG, PNG, CSV, TXT</p>
+</div>
+
+</body>
+</html>

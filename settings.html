@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vision Guard - Settings</title>
+    <link rel="stylesheet" href="settings.css">
+</head>
+<body>
+    <header class="main-header">
+            <div class="logo-text">Vision Guard</div>
+            <nav class="main-nav">
+                <a href="vision.html">Home</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="profile.html">Profile</a>
+                <a href="reports.html">Reports</a>
+                <a href="scanner.html">Scanner</a>
+                <a href="Help & support.html">Help & Support</a>
+                <a href="Feedback.html">Feedback</a>
+                <a href="aboutus.html">About Us</a>
+                <a href="settings.html" class="active">Settings</a>
+            </nav>
+        </header>
+
+        <!-- CSS-only theme toggle control (checkbox hack). Placed before the app container so it can scope variables. -->
+        <input type="checkbox" id="theme-toggle" aria-label="Toggle dark theme" hidden>
+
+        <div class="app">
+        <main class="settings-main">
+        <h1>Settings</h1>
+
+        <section class="settings-card" id="profile-settings">
+            <h2>Profile settings</h2>
+            <p>Update your basic profile information and profile picture.</p>
+            <form>
+                <label>Full name<div class="muted">(Visible on your profile)</div></label>
+                <input type="text" placeholder="Your full name">
+
+                <label>Email</label>
+                <input type="email" placeholder="you@example.com">
+
+                <label>Phone number</label>
+                <input type="tel" placeholder="+1 (555) 123-4567">
+
+                <label>Profile picture</label>
+                <div class="row">
+                    <input type="file" accept="image/*">
+                    <button type="button" class="small">Upload</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="settings-card" id="account-settings">
+            <h2>Account settings</h2>
+            <p>Manage password, two-step verification and linked accounts.</p>
+            <label>Change password</label>
+            <div class="row">
+                <input type="password" placeholder="Current password">
+                <input type="password" placeholder="New password">
+                <input type="password" placeholder="Confirm new password">
+                <button type="button">Change password</button>
+            </div>
+
+            <label>Two-step verification</label>
+            <div class="row">
+                <button type="button">Enable 2FA</button>
+                <div class="muted">Use an authenticator app or SMS for extra security.</div>
+            </div>
+
+            <label>Linked accounts</label>
+            <div class="row">
+                <div class="muted">Connect or disconnect third-party accounts (e.g., Google)</div>
+                <button type="button">Manage linked accounts</button>
+            </div>
+        </section>
+
+        <section class="settings-card" id="privacy-settings">
+            <h2>Privacy settings</h2>
+            <p>Control who can see your data and activity.</p>
+            <label class="switch">Show profile publicly
+                <input type="checkbox" checked>
+                <span class="slider"></span>
+            </label>
+            <label class="switch">Allow data to be used for research
+                <input type="checkbox">
+                <span class="slider"></span>
+            </label>
+        </section>
+
+        <section class="settings-card" id="notification-settings">
+            <h2>Notification settings</h2>
+            <p>Enable or disable how you receive alerts.</p>
+            <label class="switch">Email notifications
+                <input type="checkbox" checked>
+                <span class="slider"></span>
+            </label>
+            <label class="switch">SMS notifications
+                <input type="checkbox">
+                <span class="slider"></span>
+            </label>
+            <label class="switch">In-app notifications
+                <input type="checkbox" checked>
+                <span class="slider"></span>
+            </label>
+        </section>
+
+        <section class="settings-card" id="theme-settings">
+            <h2>Theme settings</h2>
+            <p>Choose your preferred appearance.</p>
+            <div class="row">
+                <!-- Label toggles the hidden checkbox #theme-toggle (CSS-only) -->
+                <label for="theme-toggle" class="theme-toggle-label">
+                    <span>Toggle dark mode</span>
+                    <span class="slider theme-slider" aria-hidden="true"></span>
+                </label>
+                <div class="muted">(No JavaScript required — your browser will remember preferences if you use server-side or browser settings.)</div>
+            </div>
+        </section>
+
+        <section class="settings-card" id="language-settings">
+            <h2>Language settings</h2>
+            <p>Select your preferred display language.</p>
+            <select>
+                <option value="en" selected>English</option>
+                <option value="es">Español</option>
+                <option value="hi">हिन्दी</option>
+                <option value="fr">Français</option>
+            </select>
+        </section>
+
+        <section class="settings-card" id="security-settings">
+            <h2>Security settings</h2>
+            <p>Manage active sessions and recovery options.</p>
+            <div class="row">
+                <button type="button">Logout from all devices</button>
+                <button type="button">View active sessions</button>
+            </div>
+            <label>Recovery phone / email</label>
+            <input type="text" placeholder="Add recovery phone or email">
+        </section>
+
+        <section class="settings-card" id="data-settings">
+            <h2>Data settings</h2>
+            <p>Manage or export your saved data and reports.</p>
+            <div class="row">
+                <button type="button">Export my reports</button>
+                <button type="button" class="danger">Request data deletion</button>
+            </div>
+            <div class="muted">Export provides a ZIP containing your reports in PDF/CSV formats.</div>
+        </section>
+
+        <section class="settings-card" id="system-preferences">
+            <h2>System preferences</h2>
+            <p>Adjust sound, display, and performance settings.</p>
+            <label class="switch">Enable sounds
+                <input type="checkbox" checked>
+                <span class="slider"></span>
+            </label>
+            <label>Display density
+                <select>
+                    <option>Comfortable</option>
+                    <option>Compact</option>
+                </select>
+            </label>
+        </section>
+
+        <section class="settings-card" id="help-logout">
+            <h2>Help & support</h2>
+            <p>Get help or provide feedback.</p>
+            <div class="row">
+                <a class="btn" href="Help & support.html">Open Help & Support</a>
+                <a class="btn" href="Feedback.html">Send Feedback</a>
+            </div>
+
+            <h2 style="margin-top:18px">Logout</h2>
+            <p>Securely exit your account.</p>
+            <div class="row">
+                <a class="btn danger" href="visionlogin.html">Logout</a>
+            </div>
+        </section>
+
+        <section class="note">
+            <h3>Notes on duplicates</h3>
+            <p>Some pages in this project already contain overlapping content (for example, <code>aboutus.html</code> includes a short Terms &amp; Conditions section, while a separate <code>visionT&amp;C.html</code> file also exists). To avoid confusion we link the full Terms &amp; Conditions to <a href="visionT&C.html">visionT&C.html</a> where appropriate and keep the About page as a high-level summary.</p>
+        </section>
+
+        </main>
+
+        <footer class="main-footer">
+                <p>&copy; 2025 Vision Guard. All rights reserved.</p>
+        </footer>
+        </div> <!-- .app -->
+
+</body>
+</html>

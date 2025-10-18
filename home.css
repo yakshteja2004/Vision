@@ -1,0 +1,169 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #0f0f23, #1a1a3e);
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    overflow-x: hidden;
+}
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    position: relative;
+}
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    animation: fadeIn 2s;
+}
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    animation: fadeIn 2s 0.5s both;
+}
+.scanner {
+    width: 300px;
+    height: 300px;
+    margin: 0 auto 30px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #4ecdc4, #ff6b6b);
+    position: relative;
+    animation: scanPulse 2s infinite;
+}
+.scanner::before {
+    content: 'Eye Scanner';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5em;
+    color: #000;
+}
+.get-started {
+    padding: 15px 30px;
+    background: #4ecdc4;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: background 0.3s;
+    animation: fadeIn 2s 1s both;
+}
+.get-started:hover {
+    background: #45b7aa;
+}
+/* Background animation */
+.bg-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="rgba(78,205,196,0.1)"/></svg>') repeat;
+    animation: bgMove 20s linear infinite;
+    z-index: -1;
+}
+/* AI Bolt - Floating chat icon */
+.ai-bolt {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background: #ff6b6b;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 1.5em;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(255,107,107,0.5);
+    z-index: 1000;
+    animation: boltPulse 2s infinite;
+}
+.ai-bolt:hover {
+    background: #ff5252;
+}
+/* Hide the checkbox */
+#menuToggle {
+    display: none;
+}
+
+/* Hamburger styling */
+.hamburger {
+    font-size: 30px;
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1001;
+}
+
+/* Nav menu hidden by default */
+.navMenu {
+    position: fixed;
+    top: 0;
+    left: -220px; /* hide outside the screen */
+    width: 200px;
+    height: 120vh;
+    background: rgba(0,0,0,0.5);
+    padding: 20px;
+    padding-top:70px;
+    padding-left: 13px;
+    box-sizing: border-box;
+    transition: left 0.3s ease;
+    z-index: 1000;
+}
+
+/* Nav links styling */
+.navMenu a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    margin: 10opx 0;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.navMenu a:hover {
+    background: #4ecdc4 ;
+}
+
+.navMenu b {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    margin: 10opx 0;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+
+.navMenu b:hover {
+    background: red ;
+}
+
+/* When checkbox is checked, show nav */
+#menuToggle:checked + .hamburger + .navMenu {
+    left: 0; /* slide in from left */
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes scanPulse {
+    0%, 100% { transform: scale(1); box-shadow: 0 0 20px #4ecdc4; }
+    50% { transform: scale(1.05); box-shadow: 0 0 40px #ff6b6b; }
+}
+@keyframes bgMove {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100px); }
+}
+@keyframes boltPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}

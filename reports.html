@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Vision Guard | Eye Disease Report</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reports.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="main-header">
+        <div class="logo-text">Vision Guard</div>
+        <nav class="main-nav">
+            <a href="vision.html">Home</a>
+            <a href="visionsignup.html">Sign Up</a>
+            <a href="visionlogin.html">Login</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="profile.html">Profile</a>
+            <a href="reports.html" class="active">Reports</a>
+        </nav>
+    </header>
+
+    <!-- Main Content Section -->
+    <main>
+        <div class="report-container">
+            <h1>🏥 Vision Guard</h1>
+            <h2>Eye Disease Diagnostic Report</h2>
+
+            <!-- Patient Information -->
+            <div class="section-title">🧑‍⚕️ Patient Information</div>
+            <table>
+                <tr><th>Patient Name</th><td>Arjun Reddy</td></tr>
+                <tr><th>Age / Gender</th><td>38 / Male</td></tr>
+                <tr><th>Patient ID</th><td>VG-2025-0342</td></tr>
+                <tr><th>Date of Examination</th><td>14-Oct-2025</td></tr>
+            </table>
+
+            <!-- Scan Test Details -->
+            <div class="section-title">👁️ Test Details</div>
+            <table>
+                <tr><th>Test Type</th><th>Description</th></tr>
+                <tr><td>Fundus Image Scan</td><td>Captured retinal image for AI-based disease detection.</td></tr>
+                <tr><td>OCT Scan</td><td>Measured retinal layer thickness and optic nerve health.</td></tr>
+                <tr><td>Corneal Evaluation</td><td>Assessed transparency and surface of cornea.</td></tr>
+                <tr><td>Visual Acuity Test</td><td>Checked vision sharpness for both eyes.</td></tr>
+            </table>
+
+            <!-- AI Detected Diseases -->
+            <div class="section-title">🧠 AI Detected Diseases and Defects</div>
+            <table>
+                <tr>
+                    <th>Disease / Defect</th>
+                    <th>Detection Type</th>
+                    <th>Severity</th>
+                    <th>Confidence Level</th>
+                    <th>Remarks</th>
+                </tr>
+                <tr>
+                    <td>Glaucoma</td>
+                    <td>Optic Nerve Analysis</td>
+                    <td class="highlight">Moderate</td>
+                    <td>89%</td>
+                    <td>Elevated eye pressure and optic nerve damage detected.</td>
+                </tr>
+                <tr>
+                    <td>Keratitis (Corneal Infection)</td>
+                    <td>Corneal Scan</td>
+                    <td>Mild</td>
+                    <td>82%</td>
+                    <td>Localized corneal opacity and redness observed.</td>
+                </tr>
+                <tr>
+                    <td>Diabetic Retinopathy</td>
+                    <td>Retinal Image Analysis</td>
+                    <td class="highlight">Severe</td>
+                    <td>91%</td>
+                    <td>Retinal bleeding and exudates detected.</td>
+                </tr>
+                <tr>
+                    <td>Cataract</td>
+                    <td>Lens Opacity Detection</td>
+                    <td>Early Stage</td>
+                    <td>76%</td>
+                    <td>Lens cloudiness present, further monitoring advised.</td>
+                </tr>
+            </table>
+
+            <!-- Doctor Remarks -->
+            <div class="section-title">💬 Doctor’s Remarks</div>
+            <table>
+                <tr>
+                    <td>
+                        - Multiple early-stage conditions detected.<br>
+                        - Immediate attention required for diabetic retinopathy.<br>
+                        - Continue medication for glaucoma and avoid eye strain.<br>
+                        - Maintain healthy sugar levels and hydration.<br>
+                        - Schedule next follow-up after 6 weeks.
+                    </td>
+                </tr>
+            </table>
+
+            <!-- Summary -->
+            <div class="section-title">✅ Summary</div>
+            <table class="summary-table">
+                <tr><td>Disease Detected</td><td>Glaucoma, Keratitis, Diabetic Retinopathy, Cataract</td></tr>
+                <tr><td>Overall Risk Level</td><td class="highlight">High</td></tr>
+                <tr><td>Recommended Follow-up</td><td>6 Weeks</td></tr>
+            </table>
+
+            <!-- Download Report Button -->
+            <button type="downloadBtn" onclick="alert('Do you want to download the report?')">⬇️ Download Report (PDF)</button>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="main-footer">
+        <p>&copy; 2025 Vision Guard. All rights reserved.</p>
+    </footer>
+</body>
+</html>
