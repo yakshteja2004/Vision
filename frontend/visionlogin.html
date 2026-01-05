@@ -16,6 +16,42 @@
             <a href="dashboard.html">Dashboard</a>
         </nav>
     </header>
+    
+    <script>
+    function login() {
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+        
+        fetch("http://127.0.0.1:5000/api/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                email: email,
+                password: password
+            })
+        })
+        .then(response => response.json().then(data => ({
+            status: response.status,
+            body: data
+        })))
+        .then(result => {
+            // ✅ ONLY this condition allows redirect
+            if (result.status === 200 && result.body.success === true) {
+                alert("Login successful");
+                window.location.href = "HOME.html";
+            } else {
+                alert("Invalid email or password");
+            }
+        })
+        .catch(error => {
+            alert("Server error");
+            console.error(error);
+        });
+    }
+    </script>
+
     <main>
         <div class="login-form">
             <h2>Login to Your Account</h2>
