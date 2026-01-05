@@ -1,0 +1,5 @@
+__pycache__/
+uploads/
+processed/
+eye_dataset/
+*.h5

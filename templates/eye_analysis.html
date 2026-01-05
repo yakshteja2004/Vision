@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Eye Analysis</title>
+</head>
+<body>
+
+<h1>Eye Analysis Page Loaded ✅</h1>
+
+<form action="/upload" method="POST" enctype="multipart/form-data">
+    <input type="file" name="image" required>
+    <br><br>
+    <button type="submit">Upload Image</button>
+</form>
+
+</body>
+</html>
+
+{% if original_image %}
+<h3>Original Image</h3>
+<img src="/uploads/{{ original_image }}" width="300">
+{% endif %}
+
+{% if processed_image %}
+<h3>Eye Detection Result</h3>
+<img src="/processed/{{ processed_image }}" width="300">
+{% endif %}
+
+{% if diagnosis %}
+<h2>Diagnosis Result:</h2>
+<p style="font-size:20px; font-weight:bold;">
+    {{ diagnosis }}
+</p>
+{% endif %}
+
+{% if diagnosis %}
+    <h2>Prediction Result</h2>
+    <p style="font-size:22px; font-weight:bold; color:green;">
+        {{ diagnosis }}
+    </p>
+{% endif %}
