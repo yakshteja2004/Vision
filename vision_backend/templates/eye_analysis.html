@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Eye Disease Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/flask.css') }}">
+</head>
+<body>
+
+    <!-- Background animation -->
+    <div class="bg-animation"></div>
+
+    <!-- AI assistant button -->
+    <div class="ai-bolt">
+    <a href="/chatbolt.html">🤖</a>
+</div>
+
+
+<!-- Centered wrapper -->
+<div class="scanner-wrapper">
+    <form action="/analyze" method="POST" enctype="multipart/form-data">
+        <div class="upload-box">
+            <h2>📁 Upload Dataset</h2>
+
+            <label class="custom-upload" for="file-upload">Choose File</label>
+            <input 
+                type="file" 
+                id="file-upload" 
+                name="image" 
+                accept=".jpg,.png,.jpeg,.csv,.txt" 
+                required 
+                hidden
+            >
+
+            <p>Supported formats: JPG, PNG, CSV, TXT</p>
+
+            <button type="submit">Analyze</button>
+        </div>
+    </form>
+</div>
+
+<div class="result-wrapper">
+<div class="result-box">
+{% if original_image %}
+<h3>Original Image</h3>
+<img src="/uploads/{{ original_image }}" width="300">
+{% endif %}
+
+{% if processed_image %}
+<h3>Eye Detection Result</h3>
+<img src="/processed/{{ processed_image }}" width="300">
+{% endif %}
+
+{% if diagnosis %}
+<h2>Diagnosis Result:</h2>
+<p style="font-size:20px; font-weight:bold;">
+    {{ diagnosis }}
+</p>
+{% endif %}
+
+{% if diagnosis %}
+    <h2>Prediction Result</h2>
+    <p style="font-size:22px; font-weight:bold; color:green;">
+        {{ diagnosis }}
+    </p>
+{% endif %}
+
+</div>
+</div>
+
+</body>
+</html>
+

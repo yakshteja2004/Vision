@@ -1,0 +1,107 @@
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background: #f4f7fa;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+.main-header {
+    width: 100%;
+    background: #2b4eff;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+.main-nav {
+    display: flex;
+    gap: 24px;
+}
+.main-nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1em;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+.main-nav a.active,
+.main-nav a:hover {
+    background: #4ecdc4;
+    color: #2b4eff;
+}
+.main-footer {
+    width: 100%;
+    background: #2b4eff;
+    color: #fff;
+    text-align: center;
+    padding: 18px 0;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    font-size: 1em;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
+}
+.feedback-section {
+    max-width: 700px;
+    margin: 40px auto 80px auto;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    padding: 40px 30px;
+}
+.feedback-section h1 {
+    color: #2b4eff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.feedback-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 20px;
+}
+.feedback-form label {
+    font-weight: 500;
+    color: #333;
+}
+.feedback-form input,
+.feedback-form textarea {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+    resize: vertical;
+}
+.feedback-form button {
+    background: #2b4eff;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 0;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.feedback-form button:hover {
+    background: #4ecdc4;
+    color: #2b4eff;
+}
+@media (max-width: 700px) {
+    .main-header {
+        flex-direction: column;
+        padding: 16px 10px;
+    }
+    .main-nav {
+        gap: 10px;
+        font-size: 0.95em;
+    }
+    .feedback-section {
+        padding: 16px 6px;
+        max-width: 98vw;
+    }
+}

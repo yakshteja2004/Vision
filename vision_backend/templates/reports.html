@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Patient Eye Analysis Report</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/reports.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Patient Eye Analysis Report</h1>
+    <p class="subtitle">
+        AI-assisted eye disease screening report
+    </p>
+
+    <!-- Top Summary -->
+    <div class="box">
+        <h2>Vision Guard – Analysis Summary</h2>
+        <p><strong>Detected Condition:</strong> {{ disease }}</p>
+        <p><strong>Confidence Level:</strong> {{ confidence }}</p>
+        <p><strong>Risk Level:</strong> {{ risk_level }}</p>
+    </div>
+
+    <!-- Patient Info -->
+    <div class="box">
+        <h2>Patient Information</h2>
+        <p><strong>Patient Name:</strong> Sample Patient</p>
+        <p><strong>Scan File:</strong> Uploaded Eye Image</p>
+        <p><strong>Patient ID:</strong> VG-001</p>
+        <p><strong>Age Group:</strong> Adult</p>
+        <p><strong>Gender:</strong> Not Specified</p>
+        <p><strong>Eye Scanned:</strong> Fundus Image</p>
+        <p><strong>Scan Date:</strong> {{ "%Y-%m-%d" }}</p>
+    </div>
+
+    <!-- Diagnosis Cards -->
+    <div class="box">
+        <h2>Diagnosis Summary</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>Detected Condition</h3>
+                <p>{{ disease }}</p>
+            </div>
+
+            <div class="card">
+                <h3>Severity Level</h3>
+                <p>{{ risk_level }}</p>
+            </div>
+
+            <div class="card">
+                <h3>Detection Confidence</h3>
+                <p>{{ confidence }}</p>
+            </div>
+
+            <!-- Show defect information ONLY when disease is normal -->
+            {% if disease == "Normal" %}
+
+            <div class="card">
+                <h3>Vision Defect</h3>
+                <p>{{ defect }}</p>
+            </div>
+
+            <div class="card">
+                <h3>Estimated Eye Power</h3>
+                <p>{{ power_range }}</p>
+            </div>
+
+            <div class="card">
+                <h3>Suggested Correction</h3>
+                <p>{{ correction }}</p>
+            </div>
+
+            {% endif %}
+
+        </div>
+    </div>
+
+    <!-- Clinical Indicators -->
+    <div class="box">
+        <h2>Clinical Indicators</h2>
+        <p><strong>Estimated Severity Index:</strong> Based on AI confidence</p>
+        <p><strong>Risk Score:</strong> {{ risk_level }}</p>
+    </div>
+
+    <!-- Findings -->
+    <div class="box">
+        <h2>Key Findings</h2>
+        <ul>
+            <li>Eye condition detected using CNN-based model</li>
+            <li>Confidence score indicates reliability of prediction</li>
+            <li>No manual intervention during analysis</li>
+        </ul>
+    </div>
+
+    <!-- Download Report -->
+    <form action="/download-report" method="post" class="download-form">
+
+<input type="hidden" name="disease" value="{{ disease }}">
+<input type="hidden" name="confidence" value="{{ confidence }}">
+<input type="hidden" name="risk_level" value="{{ risk_level }}">
+<input type="hidden" name="recommendation" value="{{ recommendation }}">
+
+<input type="hidden" name="defect" value="{{ defect }}">
+<input type="hidden" name="power_range" value="{{ power_range }}">
+<input type="hidden" name="correction" value="{{ correction }}">
+
+<button type="submit" class="download-btn">Download Report</button>
+
+</form>
+
+    <!-- Disclaimer -->
+    <p class="disclaimer">
+        ⚠ This is an AI-assisted screening report and not a final medical diagnosis.
+    </p>
+
+</div>
+
+</body>
+</html>

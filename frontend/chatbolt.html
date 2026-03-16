@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Vision Guard ChatBolt</title>
+<link rel="stylesheet" href="chatbolt.css">
+</head>
+
+<body>
+
+<h2>Vision Guard AI Assistant</h2>
+
+<h3>Upload Medical Report</h3>
+
+<form action="http://127.0.0.1:5000/upload_pdf" method="post" enctype="multipart/form-data">
+
+<input type="file" name="pdf_file" accept=".pdf" required>
+<button type="submit">Upload PDF</button>
+
+</form>
+
+<br>
+
+<h3>Ask Question</h3>
+
+<form action="http://127.0.0.1:5000/ask_chatbolt" method="post">
+
+<input type="text" name="question" placeholder="Ask about your report">
+<button type="submit">Ask</button>
+
+</form>
+
+</body>
+</html>

@@ -1,0 +1,229 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background: linear-gradient(135deg, #0f0f23, #0f172a);
+    color: #fff;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Background animation */
+.bg-animation {
+    position: fixed;
+    inset: 0;
+    background: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='1' fill='rgba(78,205,196,0.1)'/></svg>") repeat;
+    animation: bgMove 20s linear infinite;
+    z-index: -1;
+}
+
+.scanner-page h1 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    opacity: 0.8;
+    margin-bottom: 40px;
+}
+
+/* Wrapper */
+.scanner-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* Upload box */
+.upload-box {
+    width: 320px;
+    background: #1a1a2e;
+    margin: 200px;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(43,78,255,0.5);
+}
+
+.upload-box h2 {
+    color: #2b4eff;
+    margin-bottom: 20px;
+}
+
+.custom-upload {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #2b4eff;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.custom-upload:hover {
+    background: #1a34b8;
+    transform: translateY(-2px);
+}
+
+.upload-box p {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #aaa;
+}
+
+.upload-box button {
+    margin-top: 20px;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 10px;
+    background: #2b4eff;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.upload-box button:hover {
+    background: #1a34b8;
+}
+
+.result-box {
+    background: #111827;
+    padding: 30px;
+    border-radius: 12px;
+    margin: 100px;
+    margin-inline-start: 500px;
+    margin-top: -100px;
+    width: 530px;   
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+
+/* AI Bolt */
+.ai-bolt {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background: #ff6b6b;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    animation: boltPulse 2s infinite;
+    z-index: 1000;
+}
+
+/* Navigation */
+.navMenu {
+    position: fixed;
+    top: 0;
+    left: -220px;
+    width: 200px;
+    height: 100vh;
+    background: rgba(0,0,0,0.6);
+    padding: 80px 15px;
+    transition: 0.3s;
+    z-index: 1000;
+}
+
+.navMenu a {
+    display: block;
+    padding: 10px;
+    margin-bottom: 8px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.navMenu a:hover {
+    background: #4ecdc4;
+    color: #000;
+}
+
+.logout:hover {
+    background: red;
+}
+
+/* Hide the checkbox */
+#menuToggle {
+    display: none;
+}
+
+/* Hamburger styling */
+.hamburger {
+    font-size: 30px;
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1001;
+}
+
+/* Nav menu hidden by default */
+.navMenu {
+    position: fixed;
+    top: 0;
+    left: -220px; /* hide outside the screen */
+    width: 200px;
+    height: 120vh;
+    background: rgba(0,0,0,0.5);
+    padding: 20px;
+    padding-top:70px;
+    padding-left: 13px;
+    box-sizing: border-box;
+    transition: left 0.3s ease;
+    z-index: 1000;
+}
+
+/* Nav links styling */
+.navMenu a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    margin: 10opx 0;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.navMenu a:hover {
+    background: #4ecdc4 ;
+}
+
+.navMenu b {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    margin: 10opx 0;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+
+.navMenu b:hover {
+    background: red ;
+}
+
+/* When checkbox is checked, show nav */
+#menuToggle:checked + .hamburger + .navMenu {
+    left: 0; /* slide in from left */
+}
+
+/* Animations */
+@keyframes bgMove {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100px); }
+}
+
+@keyframes boltPulse {
+    0%,100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}

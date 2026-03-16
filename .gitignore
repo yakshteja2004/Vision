@@ -1,0 +1,16 @@
+# datasets
+eye_dataset/
+eye_defect_dataset/
+
+# uploads
+uploads/
+processed/
+
+# reports
+*.pdf
+
+# models
+*.h5
+
+# python cache
+__pycache__/
